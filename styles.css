@@ -1,5 +1,5 @@
 :root{
-    --secondary-color: rgba(98, 187, 247, 0.882);
+    --secondary-color: rgb(127, 194, 252);
 }
 
 @font-face {
@@ -26,7 +26,7 @@ header{
     justify-content: space-between;
     align-items: center;
     font-size: 30px;
-    background-color: rgb(220, 237, 252);
+    background-color: var(--secondary-color);
 }
 
 footer{
@@ -50,7 +50,7 @@ footer span {
     align-items: center;
 }
 
-.add,.log_in{
+.add,.log_in,.edit{
     align-items: center;
     appearance: none;
     background-color: rgb(193, 222, 247);
@@ -101,3 +101,66 @@ footer span {
     margin-left: 50px;
 }
 
+.book{
+    border-radius: 10px;
+    background-color: var(--secondary-color)    ;
+    min-width: 590px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.book_left{
+    grid-area: 1/1/2/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.book_right{
+    grid-area: 1/2/2/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.book_left_top{
+    font-size: larger;
+}
+
+.book_left_bottom{
+    font-style: italic;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+}
+
+.pages_txt{
+    grid-area: 1/1/2/2;
+}
+
+.pages{
+    grid-area: 2/1/3/2;
+}
+
+.edit{
+    grid-area: 2/2/3/3;
+    height: 35px;
+}
+
+.read{
+    grid-area: 1/2/2/3;
+}
+
+.book_common{
+    padding: 10px;
+}
+
+#read_status{
+    margin-right: 10px;
+}
