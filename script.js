@@ -65,4 +65,62 @@ function appendBook(book) {
     bookRight.appendChild(edit_button);
 }
 
+function addBook(){
+    const addCard = document.createElement("form");
+    const bookLeft = document.createElement("div");
+    const bookTitle = document.createElement("input");
+    const bookAuthorDiv = document.createElement("div");
+    const bookAuthor = document.createElement("input");
+    const bookRight = document.createElement("div");
+    const bookPagesTxt = document.createElement("div");
+    const bookPages = document.createElement("input");
+    const readDiv = document.createElement("div");
+    const done_button = document.createElement("button");
+    const readtxt = document.createElement("label");
+    const checkbox = document.createElement("input");
+    addCard.classList.add("book");
+    bookLeft.classList.add("book_left");
+    bookRight.classList.add("book_right");
+    bookAuthor.classList.add("author");
+    bookAuthorDiv.classList.add("book_left_bottom","add_common");
+    bookTitle.classList.add("book_left_top","add_common");
+    bookPagesTxt.classList.add("page_txt","add_common");
+    readDiv.classList.add("read","add_common");
+    bookTitle.setAttribute("type","text");
+    bookAuthor.setAttribute("type","text");
+    bookPages.setAttribute("type","number")
+    bookTitle.setAttribute("name","title");
+    bookAuthor.setAttribute("name","author");
+    bookPages.setAttribute("name","book_pages")
+    bookTitle.setAttribute("id","title");
+    bookTitle.setAttribute("placeholder","Title");
+    bookAuthor.setAttribute("id","author");
+    bookAuthor.setAttribute("placeholder","Author(s)");
+    bookPages.setAttribute("id","book_pages")
+    bookPages.setAttribute("placeholder","1")
+    readtxt.setAttribute("for","read_status")
+    checkbox.setAttribute("id","read_status");
+    checkbox.setAttribute("name","read_status");
+    checkbox.setAttribute("type","checkbox")
+    bookPages.classList.add("pages");
+    done_button.classList.add("edit","book_common");
+    bookPagesTxt.textContent = "Pages";
+    readtxt.textContent = "Read";
+    done_button.textContent = "Done";
+    done_button.setAttribute("type","button")
+    content.appendChild(addCard);
+    addCard.appendChild(bookLeft);
+    addCard.appendChild(bookRight);
+    bookLeft.appendChild(bookTitle);
+    bookLeft.appendChild(bookAuthorDiv);
+    bookAuthorDiv.appendChild(bookAuthor);
+    bookRight.appendChild(bookPagesTxt);
+    bookRight.appendChild(readDiv);
+    readDiv.appendChild(checkbox);
+    readDiv.appendChild(readtxt);
+    bookRight.appendChild(bookPages);
+    bookRight.appendChild(done_button);
+}
+
+addBook();
 appendBook(book1);

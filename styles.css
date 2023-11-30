@@ -118,6 +118,7 @@ footer span {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    align-items: center;
 }
 
 .book_right{
@@ -155,6 +156,10 @@ footer span {
 
 .read{
     grid-area: 1/2/2/3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
 }
 
 .book_common{
@@ -163,4 +168,16 @@ footer span {
 
 #read_status{
     margin-right: 10px;
+}
+
+input{
+    margin: 0 10px 0 10px;
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+    margin: 10px;
+}
+
+#book_pages{
+    width: 60px;
 }
