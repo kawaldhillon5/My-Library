@@ -43,7 +43,7 @@ function appendBook(book) {
     readDiv.classList.add("read","book_common");
     readtxt.setAttribute("for",`${book.title}`)
     checkbox.setAttribute("id",`${book.title}`);
-    if(book.read == "on"){
+    if(book.read){
         checkbox.setAttribute("checked","checked");
     }
     checkbox.setAttribute("class","read_status")
@@ -133,7 +133,11 @@ function addBook(){
         done_button.addEventListener("mousedown", () =>{ done_button.classList.add("active");});
         done_button.addEventListener("mouseup",()=>{done_button.classList.remove("active")});
         done_button.addEventListener("click",() =>{
-            const book1 = new book(bookTitle.value,bookAuthor.value,bookPages.value,checkbox.value);
+            let check = false; 
+            if(checkbox.checked){
+                check = true;
+            }
+            const book1 = new book(bookTitle.value,bookAuthor.value,bookPages.value,check);
             appendBook(book1);
             console.log(checkbox.value);
             add_btn_clicks = 1;
