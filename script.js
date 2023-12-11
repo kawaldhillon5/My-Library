@@ -20,7 +20,7 @@ add_btn.addEventListener("mouseup",()=>{add_btn.classList.remove("active")});
 
 add_btn.addEventListener("click", addBook);
 
-const book1 = new book("C++","kawal",1496,true);
+const library = [];
 
 function appendBook(book) {
     const bookCard = document.createElement("div");
@@ -72,7 +72,10 @@ function appendBook(book) {
     bookRight.appendChild(edit_button);
     edit_button.addEventListener("mousedown", () =>{edit_button.classList.add("active");});
     edit_button.addEventListener("mouseup",()=>{edit_button.classList.remove("active")});
-    edit_button.addEventListener("click", () =>{content.removeChild(bookCard)});
+    edit_button.addEventListener("click", () =>{
+        content.removeChild(bookCard)
+        library.splice(library.indexOf(book),1);
+    });
 }
 
 function addBook(){
@@ -141,6 +144,7 @@ function addBook(){
             }
             const book1 = new book(bookTitle.value,bookAuthor.value,bookPages.value,check);
             appendBook(book1);
+            library.push(book1);
             console.log(checkbox.value);
             add_btn_clicks = 1;
             addDiv.textContent = "";
